@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "@/styles/components.css";
+@import "tailwindcss";
+
+@theme {
+  --font-*: initial;
+  --font-dmsans: "DM Sans", "sans-serif";
+  --font-montserrat: "Montserrat", "serif";
+}
+
+html,
+body,
+#root,
+.app {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-dmsans);
+  scroll-behavior: smooth;
+}
