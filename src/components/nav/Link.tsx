@@ -1,11 +1,26 @@
-import React from 'react'
+import { Link } from "react-scroll";
+import type { SectionId } from "@/types/type";
 
-type Props = {}
+type Props = {
+  section: SectionId;
+  children: React.ReactNode;
+  onClick: (sectionId: SectionId) => void;
+  activeSection: SectionId | null;
+};
 
-const Link = (props: Props) => {
+const CustomLink = ({ section, children, onClick, activeSection }: Props) => {
+  const isActive = activeSection === section;
   return (
-    <div>Link</div>
-  )
-}
+    <Link
+      to={section}
+      onClick={() => onClick(section)}
+      className={`animate hover:text-primary-300 cursor-pointer capitalize ${
+        isActive ? "text-primary-500" : ""
+      }`}
+    >
+      {children}
+    </Link>
+  );
+};
 
-export default Link
+export default CustomLink;
