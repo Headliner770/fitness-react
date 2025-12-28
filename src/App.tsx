@@ -1,4 +1,6 @@
 import Benefits from "./components/benefits";
+import ContactUs from "./components/contact";
+
 import Home from "./components/home";
 import NavBar from "./components/nav";
 import OurClasses from "./components/ourClasses";
@@ -10,6 +12,7 @@ function App() {
       <Home />
       <Benefits />
       <OurClasses />
+      <ContactUs />
     </div>
   );
 }
