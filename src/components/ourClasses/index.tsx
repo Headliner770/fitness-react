@@ -1,5 +1,4 @@
 import Heading from "@/utils/Heading";
-import { section } from "framer-motion/client";
 import ClassesSlider from "./ClassesSlider";
 
 const OurClasses = () => {
@@ -16,7 +15,7 @@ const OurClasses = () => {
           </p>
         </div>
       </div>
-      <div>
+      <div mt-10 w-full>
         <ClassesSlider />
       </div>
     </section>

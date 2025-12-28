@@ -24,3 +24,31 @@ body,
   font-family: var(--font-dmsans);
   scroll-behavior: smooth;
 }
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: "next";
+  color: #ffc132;
+  border-radius: 50px;
+  font-weight: 900;
+}
+
+#ourclasses .swiper {
+  padding-bottom: 50px;
+}
+
+#ourclasses .swiper-pagination-bullet-active {
+  background: #ff616a;
+}
+
+#ourclasses .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 1124px) {
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    display: none;
+  }
+}
