@@ -7,6 +7,11 @@
   --font-*: initial;
   --font-dmsans: "DM Sans", "sans-serif";
   --font-montserrat: "Montserrat", "serif";
+
+  --breakpoint-*: initial; /* Сброс стандартных брейкпоинтов */
+  --breakpoint-xs: 30rem; /* 480px */
+  --breakpoint-sm: 48rem; /* 768px */
+  --breakpoint-md: 66.25rem; /* 1060px */
 }
 
 html,
@@ -19,4 +24,3 @@ body,
   font-family: var(--font-dmsans);
   scroll-behavior: smooth;
 }
- 

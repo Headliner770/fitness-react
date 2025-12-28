@@ -30,7 +30,7 @@ const Benefits = () => {
           />
         </motion.div>
         <motion.div className="flex-1 relative">
-          <div className="before:absolute before:-left-20 before:-top-20 before:z-[1] before:content-(--content-abstractwaves) ">
+          <div className="before:absolute hidden md:block before:-left-20 before:-top-20 before:z-[1] before:content-(--content-abstractwaves) ">
             <Heading>
               MILLIONS OF HAPPY MEMBERS GETTING{" "}
               <span className="text-red-300">FIT</span>
@@ -52,7 +52,10 @@ const Benefits = () => {
               enim mattis odio in risus nunc.
             </p>
           </div>
-          <div className=""></div>
+          <div className="flex flex-wrap mt-16 justify-center md:justify-between items-center gap-8">
+            <ActionButton variant="button">Join Now</ActionButton>
+            <div className="relative before:z-[-1] before:content-(--content-sparkles) "></div>
+          </div>
         </motion.div>
       </motion.div>
     </section>
