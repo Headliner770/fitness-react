@@ -4,11 +4,17 @@ import BenefitsPageGraphic from "@/assets/BenefitsPageGraphic.png";
 import ActionButton from "@/utils/ActionButton";
 import Heading from "@/utils/Heading";
 import { benefits } from "@/utils/benefitData";
+import { baseMotion, slideLeft, slideRight } from "@/utils/motionPresets";
 
 const Benefits = () => {
   return (
     <section id="benefits" className="mx-auto min-h-full w-5/6 py-20">
-      <motion.div className="md:my-5 md:3/5">
+      <motion.div
+        {...baseMotion}
+        transition={{ duration: 0.9 }}
+        variants={slideLeft}
+        className="md:my-5 md:3/5"
+      >
         <Heading>MORE THAN JUST GYM.</Heading>
         <p className="my-5 text-sm">
           We provide world class fitness equipment, trainers and class get you
@@ -17,19 +23,29 @@ const Benefits = () => {
         </p>
       </motion.div>
       <motion.div className="mt-5 items-center justify-between gap-8 md:flex">
-        {benefits.map((benefit) => (
-          <Benefit key={benefit.title} {...benefit} />
+        {benefits.map((benefit, index) => (
+          <Benefit key={benefit.title} {...benefit} index={index} />
         ))}
       </motion.div>
       <motion.div className="mt-16 md:mt-28 md:flex items-center justify-between gap-20">
-        <motion.div className="flex-1">
+        <motion.div
+          {...baseMotion}
+          transition={{ duration: 0.9 }}
+          variants={slideLeft}
+          className="flex-1"
+        >
           <img
             className="mx-auto"
             src={BenefitsPageGraphic}
             alt="Benefits Page Graphic"
           />
         </motion.div>
-        <motion.div className="flex-1 relative">
+        <motion.div
+          {...baseMotion}
+          transition={{ duration: 0.9 }}
+          variants={slideRight}
+          className="flex-1 relative"
+        >
           <div className="before:absolute hidden md:block before:-left-20 before:-top-20 before:z-[1] before:content-(--content-abstractwaves) ">
             <Heading>
               MILLIONS OF HAPPY MEMBERS GETTING{" "}

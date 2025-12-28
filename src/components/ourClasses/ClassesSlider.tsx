@@ -4,7 +4,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import type { ClassType } from "react";
 import { classesData } from "@/utils/classesData";
 import ClassCard from "./ClassCard";
 
@@ -23,7 +22,7 @@ const ClassesSlider = () => {
       }}
       className="px-4"
     >
-      {classesData.map((item: ClassType, index: number) => (
+      {classesData.map((item, index) => (
         <SwiperSlide
           key={`${item.title}-${index}`}
           className="flex justify-center items-center"

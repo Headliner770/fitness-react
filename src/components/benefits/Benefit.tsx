@@ -1,12 +1,18 @@
 import type { BenefitType } from "@/types/type";
 import { motion } from "framer-motion";
 import ActionButton from "@/utils/ActionButton";
+import { slideUp, baseMotion, withDelay } from "@/utils/motionPresets";
 
-type BenefitProps = BenefitType;
+type BenefitProps = BenefitType & { index: number };
 
-const Benefit = ({ icon, title, description }: BenefitProps) => {
+const Benefit = ({ icon, title, description, index }: BenefitProps) => {
   return (
-    <motion.div className="mt-5 rounded-md border-2 border-gray-300 px-5 py-16 text-center">
+    <motion.div
+      {...baseMotion}
+      variants={slideUp}
+      transition={withDelay(index)}
+      className="mt-5 rounded-md border-2 border-gray-300 px-5 py-16 text-center"
+    >
       <div className="mb-4 flex justify-center">
         <div className="rounded-full border-2 border-gray-300 bg-red-200 p4">
           {icon}
