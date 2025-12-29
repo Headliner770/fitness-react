@@ -9,4 +9,4 @@ export const contactSchema = z.object({
     .max(2000, "Message too long"),
 });
 
-export type ComtactFormType = z.infer<typeof contactSchema>;
+export type ContactFormType = z.infer<typeof contactSchema>;
