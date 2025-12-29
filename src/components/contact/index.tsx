@@ -5,6 +5,12 @@ import ContactUsPageGraphic from "@/assets/ContactUsPageGraphic.png";
 import Heading from "@/utils/Heading";
 import TextInput from "../formElements/TextInput";
 import { motion } from "framer-motion";
+import {
+  baseMotion,
+  slideLeft,
+  slideRight,
+  slideUp,
+} from "@/utils/motionPresets";
 
 const ContactUs = () => {
   const {
@@ -28,7 +34,12 @@ const ContactUs = () => {
 
   return (
     <section id="contactus" className="mx-auto w-5/6 pb-32 pt-24">
-      <div className="md:w-3/5">
+      <motion.div
+        {...baseMotion}
+        transition={{ duration: 0.5 }}
+        variants={slideUp}
+        className="md:w-3/5"
+      >
         <Heading>
           <span className="text-primary-500">JOIN NOW</span>
           TO GET IN SHAPE
@@ -38,9 +49,14 @@ const ContactUs = () => {
           bel rhoncus. Placerat at in enim pelletesque. Nulla adipiscing leo
           egestas nisi elit risus sit. Nunc cursus sagitti
         </p>
-      </div>
+      </motion.div>
       <div className="mt-10 justify-between gap-8 md:flex">
-        <div className="mt-10 basis-3/5 md:mt-0">
+        <motion.div
+          {...baseMotion}
+          transition={{ duration: 0.9 }}
+          variants={slideLeft}
+          className="mt-10 basis-3/5 md:mt-0"
+        >
           <form className="relative z-[2]" onSubmit={handleSubmit(onSubmit)}>
             <TextInput
               placeholder="NAME"
@@ -75,10 +91,21 @@ const ContactUs = () => {
               </motion.p>
             )}
           </form>
-        </div>
-        <div className="mt-10 basis-2/5 md:mt-0">
-          <div className="w-full relative before:absolute before:-bottom-20 before:-right-10 before:z-[1] md:before:content-(--content-evolvetextconact"></div>
-        </div>
+        </motion.div>
+        <motion.div
+          {...baseMotion}
+          transition={{ duration: 0.9 }}
+          variants={slideRight}
+          className="mt-10 basis-2/5 md:mt-0"
+        >
+          <div className="w-full relative before:absolute before:-bottom-20 before:-right-10 before:z-[1] md:before:content-(--content-evolvetext">
+            <img
+              src={ContactUsPageGraphic}
+              alt="contactUsPageGraphic"
+              className="w-full relative z-[2]"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -47,6 +47,7 @@ body,
   overflow-x: hidden;
   font-family: var(--font-dmsans);
   scroll-behavior: smooth;
+  background-color: var(--color-gray-20);
 }
 
 .swiper-button-next:after,
