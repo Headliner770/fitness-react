@@ -1,12 +1,20 @@
 import Logo from "@/assets/Logo.png";
 import { footerLinks } from "@/utils/footerLinks";
-import { Link } from "react-router-dom";
+import { slideUp, baseMotion, withDelay } from "@/utils/motionPresets";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Footer = () => {
   return (
     <footer className="bg-primary-100 py-16">
       <div className="mx-auto w-5/6 flex flex-col gap-16 md:flex-row md:justify-between">
-        <div className="mt-16 basis-1/2 md:mt-0">
+        <motion.div
+          {...baseMotion}
+          custom={1}
+          variants={slideUp}
+          transition={withDelay(1)}
+          className="mt-16 basis-1/2 md:mt-0"
+        >
           <img src={Logo} alt="Logo" className="w-32" />
           <p className="my-5">
             Lorem vitae ut augue auctor faucibus eget eget ut libero. Elementum
@@ -14,24 +22,36 @@ const Footer = () => {
             orci ut habitant laoreet. Iaculis tristique.
           </p>
           <p className="text-sm text-gray-500">© Evogym All Rights Reserved.</p>
-        </div>
-        <div className="mt-16 basis-1/4 md:mt-0">
+        </motion.div>
+        <motion.div
+          {...baseMotion}
+          custom={2}
+          variants={slideUp}
+          transition={withDelay(2)}
+          className="mt-16 basis-1/4 md:mt-0"
+        >
           <h4 className="font-bold text-lg">Links</h4>
           {footerLinks && footerLinks.length > 0 && (
             <div className="flex flex-col mt-3 gap-2">
               {footerLinks.map((item, idx) => (
-                <a
-                  href={item.link}
+                <Link
+                  to={item.link}
                   key={idx}
-                  className="text-sm text-gray-700 hover:text-primary-500 animate"
+                  className="cursor-pointer text-sm text-gray-700 hover:text-primary-500 animate"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           )}
-        </div>
-        <div className="mt-16 basis-1/4 md:mt-0">
+        </motion.div>
+        <motion.div
+          {...baseMotion}
+          custom={3}
+          variants={slideUp}
+          transition={withDelay(3)}
+          className="mt-16 basis-1/4 md:mt-0"
+        >
           <h4 className="font-bold text-lg">Contact Us</h4>
           <p className="my-3 text-sm text-gray-700">
             Tempus metus mattis risus volutpat egestas.
@@ -42,7 +62,7 @@ const Footer = () => {
           >
             (333)425-6825
           </a>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

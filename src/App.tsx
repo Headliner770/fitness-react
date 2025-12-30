@@ -4,6 +4,7 @@ import Benefits from "./components/benefits";
 import OurClasses from "./components/ourClasses";
 import ContactUs from "./components/contact";
 import Footer from "./components/footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <OurClasses />
       <ContactUs />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

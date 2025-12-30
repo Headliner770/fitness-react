@@ -23,13 +23,39 @@ const ContactUs = () => {
     mode: "onTouched",
   });
 
-  const onSubmit = (data: ContactFormType) => {
-    console.log("Form submitted with data:", data);
+  // const onSubmit = (data: ContactFormType) => {
+  //   console.log("Form submitted with data:", data);
 
-    setTimeout(() => {
-      alert("Thank you for your message!");
-      reset();
-    }, 1000);
+  //   setTimeout(() => {
+  //     alert("Thank you for your message!");
+  //     reset();
+  //   }, 1000);
+  // };
+
+  const onSubmit = async (data: ContactFormType) => {
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/alizarpm11@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.success === "true") {
+        reset();
+      } else {
+        console.error("FormSubmit response:", result);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -76,7 +102,7 @@ const ContactUs = () => {
               error={errors.message}
             />
             <button
-              className="cursor-pointer mt-5 rounded-lg bg-secondary-500 px-20 py-3 animate transition duration-500 hover:text-white"
+              className=" uppercase cursor-pointer mt-5 rounded-lg bg-secondary-500 px-20 py-3 animate transition duration-500 hover:text-white"
               type="submit"
             >
               submit
