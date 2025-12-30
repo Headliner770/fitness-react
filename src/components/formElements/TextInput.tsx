@@ -15,10 +15,12 @@ const TextInput = ({
   error,
   className,
 }: Props) => {
-  const inputClass = `baseStyles ${className || ""}`;
+  const inputClass = `baseStyles w-[100%] bg-gradient-to-r from-primary-100 to-primary-300 ${
+    className || ""
+  }`;
 
   return (
-    <div className="relative mb-1">
+    <div className="mb-6">
       {type === "textarea" ? (
         <textarea
           placeholder={placeholder}
@@ -35,11 +37,7 @@ const TextInput = ({
         />
       )}
 
-      {error && (
-        <p className="text-primary-500 text-sm italic absolute bottom-0">
-          {error.message}
-        </p>
-      )}
+      {error && <p className="mt-2 text-red-500 text-sm">{error.message}</p>}
     </div>
   );
 };
